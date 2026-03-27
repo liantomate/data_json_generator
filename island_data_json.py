@@ -10,7 +10,6 @@ class IslandData:
     
     def __dict__(self):
         return {
-            "id": self.id,
             "name": self.name,
             "description": self.description,
             "texture_id": self.texture_id,
@@ -24,6 +23,6 @@ island_data.description =   input("Enter description: ")
 island_data.texture_id =    input("Enter texture ID: ")
 island_data.levels_list =   input("Enter 3 level IDs (comma-separated): ").split(",")
 
-island_data.id = "island_" + str(island_number)
+island_data.id = "i" + str(island_number)
 json_string = dict_to_json_string(island_data.__dict__())
-json_string_to_file(json_string, generate_folder() + "island_" + island_data.id + ".json")
+json_string_to_file(json_string, generate_folder() + island_data.id + ".json")
