@@ -1,3 +1,5 @@
 data/
 out/
 data_path.txt
+__pycache__/
+*.pyc

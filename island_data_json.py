@@ -16,13 +16,14 @@ class IslandData:
             "levels_list": self.levels_list
         }
 
-island_data: IslandData = IslandData()
-island_number =             input("Enter ID (number): ")
-island_data.name =          input("Enter name: ")
-island_data.description =   input("Enter description: ")
-island_data.texture_id =    input("Enter texture ID: ")
-island_data.levels_list =   input("Enter 3 level IDs (comma-separated): ").split(",")
+def call():
+    island_data: IslandData = IslandData()
+    island_number =             input("Enter ID (number): ")
+    island_data.name =          input("Enter name: ")
+    island_data.description =   input("Enter description: ")
+    island_data.texture_id =    input("Enter texture ID: ")
+    island_data.levels_list =   input("Enter 3 level IDs (comma-separated): ").split(",")
 
-island_data.id = "i" + str(island_number)
-json_string = dict_to_json_string(island_data.__dict__())
-json_string_to_file(json_string, generate_folder() + island_data.id + ".json")
+    island_data.id = "i" + str(island_number)
+    json_string = dict_to_json_string(island_data.__dict__())
+    json_string_to_file(json_string, generate_folder() + island_data.id + ".json")
